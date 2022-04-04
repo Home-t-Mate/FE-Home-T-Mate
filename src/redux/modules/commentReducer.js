@@ -1,8 +1,9 @@
 import { createAction, handleActions } from "redux-actions";
 import { produce } from "immer";
 import "moment";
+import moment from "moment";
 import { apis } from "../../shared/api";
-import { actionCreators as postActions } from "./postReducer";
+
 //action
 const SET_COMMENT = "SET_COMMENT";
 const ADD_COMMENT = "ADD_COMMENT";
@@ -36,37 +37,28 @@ const getCommentDB = (postId) => {
       .getComment(postId)
       .then((response) => {
         dispatch(setComment(postId, response.data));
+        console.log("getComment res 확인용", response.data);
       })
       .catch((error) => {
         console.log(error);
+        alert("댓글 불러오기 실패");
       });
   };
 };
 
-const addCommentDB = (postId, comment, user) => {
+const addCommentDB = (postId, comment) => {
   return function (dispatch, getState, { history }) {
     apis
       .addComment(postId, comment)
       .then((response) => {
-        let userProfileImg = "";
-        if (user.profileImg === null) {
-          userProfileImg =
-            "https://skifriendbucket.s3.ap-northeast-2.amazonaws.com/static/defalt+user+frofile.png";
-        } else {
-          userProfileImg = user.profileImg;
-        }
-        const dummyComment = {
-          nickname: user.nickname,
-          comment: comment,
-          profileImg: userProfileImg,
-          commentId: response.data.id,
-        }; //responsive로 안들어와서 임의로 만들었던거. commentId: response.commentId 이렇게 추가해줘야됨.
-        dispatch(addComment(postId, dummyComment));
-        dispatch(postActions.editPostDB);
+        // apis.getComment().then((response)=>{
+        //   dispatch(setComment(postId, response.data))
+        //   console.log('addcommet res값 확인용', response.data);
+        // })
       })
       .catch((error) => {
         console.log(error);
-        alert("댓글작성을 실패했습니다 :(");
+        alert("댓글작성 실패");
       });
   };
 };
@@ -77,10 +69,11 @@ const delCommentDB = (postId, commentId) => {
       .delComment(postId, commentId)
       .then((response) => {
         dispatch(delComment(postId, commentId));
+        alert("댓글삭제 성공");
       })
       .catch((error) => {
         console.log(error);
-        alert("댓글삭제를 실패했습니다 :(");
+        alert("댓글삭제 실패");
       });
   };
 };
@@ -96,6 +89,9 @@ export default handleActions(
       produce(state, (draft) => {
         draft.list[action.payload.postId].unshift(action.payload.comment);
       }),
+    // [EDIT_COMMENT]: (state, action) => produce(state, (draft)=> {
+    //   draft.list[action.payload.post_id].unshift(action.payload.comment)
+    // }),
     [DEL_COMMENT]: (state, action) =>
       produce(state, (draft) => {
         draft.list[action.payload.postId] = [
