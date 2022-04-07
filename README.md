@@ -20,18 +20,6 @@ Story 기능을 통한 유저들간의 식단 및 운동 공유
 |이강욱|https://github.com/Kanguk1|BE / Spring|
 |김예은|https://github.com/ours12|BE / Spring|
 
-
-#### Frontend
-
-- F/E L 이주석
-- 최예진
-
-#### Backend
-
-- B/E L 황건욱
-- 이강욱
-- 김예은
-
 ## 기술 스택 및 개발 환경
 
 ![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb74PLC%2Fbtryf0zLIef%2FdhNt518kvpmq3LURs0AYk0%2Fimg.png)
