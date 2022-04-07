@@ -10,6 +10,17 @@ Story 기능을 통한 유저들간의 식단 및 운동 공유
 
 ## 팀원소개
 
+
+## 👩‍💻 팀원 소개
+|Name|GitHub / Contact|Position|
+|------|---|---|
+|이주석L |https://github.com/act99|FE / React|
+|최예진|https://github.com/YJ-my|FE / React|
+|황건욱VL |https://github.com/hgu5141|BE / Spring|
+|이강욱|https://github.com/Kanguk1|BE / Spring|
+|김예은|https://github.com/ours12|BE / Spring|
+
+
 #### Frontend
 
 - F/E L 이주석
