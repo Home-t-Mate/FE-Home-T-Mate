@@ -31,7 +31,7 @@ WebSocket을 이용한 채팅 및 유튜브 실시간 공유 & 재생이 가능�
 Story 기능을 통한 유저들간의 식단 및 운동을 공유해 보세요!  
 스케쥴러 기능을 활용해 운동스케쥴을 계획해 보세요!
 
-#### 자세히 보기:  [노션링크](https://harsh-ease-11d.notion.site/Home-T-Mate-b420be81dd3841c5a980bc99698897b9) 
+#### 👉 자세히 보기:  [노션링크](https://harsh-ease-11d.notion.site/Home-T-Mate-b420be81dd3841c5a980bc99698897b9) 
 
 ## :triangular_flag_on_post: 팀원소개
 
